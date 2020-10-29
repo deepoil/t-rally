@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  cli:
+    build: .
+    ports:
+      - '3000:3000'
+    volumes:
+      - '.:/apps/t_rally'
+       - '/apps/node_modules'
+    tty: true
+    stdin_open: true
+    command: yarn install
