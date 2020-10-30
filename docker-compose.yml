@@ -5,9 +5,8 @@ services:
     build: .
     ports:
       - '3000:3000'
+      - '3010:3010'
     volumes:
       - '.:/apps/t_rally'
-      - '/apps/node_modules'
     tty: true
     stdin_open: true
-    command: yarn install

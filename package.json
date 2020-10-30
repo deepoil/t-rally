@@ -2,8 +2,10 @@
   "name": "t_rally",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:3010",
   "dependencies": {
     "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
@@ -27,10 +29,11 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "yarn mock & react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "mock": "./node_modules/json-server/lib/cli/bin.js --watch ./mock/json-server/api.json -p 3010 -m ./mock/json-server/middleware/proxy.js --host 0.0.0.0"
   },
   "eslintConfig": {
     "extends": [
@@ -56,6 +59,7 @@
     "@types/react-router": "^5.1.8",
     "@types/react-router-dom": "^5.1.6",
     "@types/redux-thunk": "^2.1.0",
+    "json-server": "^0.16.2",
     "react-hot-loader": "^4.13.0",
     "redux-devtools": "^3.7.0",
     "ts-loader": "^8.0.7"
