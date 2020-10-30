@@ -1,2 +1,2 @@
 ## TRally
-little by little
+little by little.
