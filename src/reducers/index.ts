@@ -1,15 +1,15 @@
-import { combineReducers } from 'redux'
-import { History } from 'history'
-import { RouterState, connectRouter } from 'connected-react-router'
-import counterReducer from './counter'
+import { combineReducers } from 'redux';
+import { History } from 'history';
+import { RouterState, connectRouter } from 'connected-react-router';
+import globalPlanBasicReducer from './globalPlanBasicReducer';
 
 const rootReducer = (history: History) => combineReducers({
-    count: counterReducer,
+    globalPlanBasic: globalPlanBasicReducer,
     router: connectRouter(history)
 })
 
 export interface State {
-    count: number
+    globalPlanBasic: object
     router: RouterState
 }
 
